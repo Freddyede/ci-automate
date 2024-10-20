@@ -8,5 +8,16 @@ jobs:
         uses: actions/checkout@v2
       - name: Install the dependencies
         run: npm ci
-      - name: End message
-        run: echo 'All done!'
+      - name: Initialize Git user
+        run: |
+          git config --global user.email "patouillardfranck3@gmail.com"
+          git config --global user.name "Freddyede"
+      - name: Initialize the NPM config
+        run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Run release
+        run: npm run release --ci
+        env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
