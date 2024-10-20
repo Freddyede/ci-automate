@@ -1,0 +1,20 @@
+{
+  "name": "untitled3",
+  "version": "1.0.2",
+  "description": "",
+  "type": "module",
+  "main": "index.ts",
+  "scripts": {
+    "test": "jest",
+    "release": "release-it"
+  },
+  "private": true,
+  "devDependencies": {
+    "@types/jest": "^29.5.13",
+    "release-it": "^17.10.0",
+    "ts-jest": "^29.2.5"
+  },
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}
